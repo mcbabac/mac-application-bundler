@@ -4,8 +4,8 @@
 
 ## Why?
 
- Because I was unaware of the existance of [Platypus](https://github.com/Project-Platypus/Platypus).
-> ***Seriously go use [Platypus](https://github.com/Project-Platypus/Platypus) it is literally better in every way.***
+ Because I was unaware of the existance of [Platypus](https://github.com/sveinbjornt/Platypus).
+> ***Seriously go use [Platypus](https://github.com/sveinbjornt/Platypus) it is literally better in every way.***
 
 ## Note
 
