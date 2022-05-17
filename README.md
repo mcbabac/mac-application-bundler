@@ -38,4 +38,4 @@ I dont know why this happens but this works around it.
 
 - Open a terminal where the script is and run:
     "`chmod +x RunApp.sh`"
-This marks the script as an executable making it able to be executed.
+The script has to be marked as executable before it can be run.
