@@ -9,8 +9,8 @@
 
 ## Note
 
-    This was made for my own uses and the following instructions follow suit.
-    You will guaranteed need to edit the RunApp.sh and the provided applescript to fit your own purpose and the following instructions will not cover everything that you may need. However I have tried to leave everything in a fashion such that anyone who knows what they are doing should have little dificulty making it work for them.
+> This was made for my own uses and the following instructions follow suit.
+You will guaranteed need to edit the RunApp.sh and the provided applescript to fit your own purpose and the following instructions will not cover everything that you may need. However I have tried to leave everything in a fashion such that anyone who knows what they are doing should have little dificulty making it work for them.
 
  **TLDR: I am not providing support.** Be prepared for what you are getting into. *Use at your own discretion and risk.*
 
