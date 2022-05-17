@@ -1,0 +1,57 @@
+--<<Originally created by mcbabac for the running and packaging of dotnet programs>>--
+--	If you have somehow found this STOP. Go use:
+--	https://github.com/Project-Platypus/Platypus
+--	Does everything this does but better in everyway.
+
+
+--<<Replace ScriptApp with the name of the executable file for your program.>>--
+set programToRun to "ScriptApp" & "'"
+
+
+tell application "Finder"
+	set current_path0 to container of (path to me) as alias
+end tell
+set current_path1 to quoted form of (POSIX path of current_path0)
+set current_path2 to text 1 thru -2 of current_path1
+set appName to name of me --"Example.app'"
+set AppFromRoot to (current_path2 & appName & ".app") & "/Contents/Resources/Program"
+set programLocation to AppFromRoot & ("/" & programToRun)
+
+
+--<<RunApp.sh is the name of the shell script to be run if using that for launching your program.>>
+set scriptPartial1 to AppFromRoot & ("/" & ("RunApp.sh" & "'"))
+set scriptPartial2 to scriptPartial1 & ((" " & AppFromRoot) & "'")
+set scriptPartial3 to scriptPartial2 & (" './" & programToRun)
+set command to a reference to scriptPartial3
+----/Users/XXX/Desktop/Untitled.app/Contents/Resources
+--/Users/XXX/Desktop/DotnetProgram.app/Contents/Resources/RunApp.sh
+
+--<<The first two options were designed with a dotnet program compiled as a self contained program.>>
+--<<For example comiled like such as the following. Where the output directory is a folder in the app.>>
+--"dotnet publish -c Release --runtime osx-x64 --self-contained --output <OUTPUT_DIRECTORY>"
+
+--<<If the program requires a terminal use this.>>
+--<<For example if you need to use Console.ReadKey()>>
+tell application "Terminal"
+	activate
+	do script programLocation & " && exit"
+end tell
+
+--<<If the program does not require a terminal you can instead run a shell command or script file to start the program.>--
+--<<Make sure to mark the script as executable though.>>
+--do shell script command
+
+--<<Run the shell script from a terminal as a dotnet program dill>>
+--tell application "Terminal"
+--	do script "dotnet" & ((" " & (programLocation & ".dll")) & " && exit")
+--	activate
+--end tell
+
+
+--<<The following is some debug stuff that you can copy paste and uncomment it out.>>--
+
+--tell application "System Events"
+--	display alert command
+--end tell
+
+--set the clipboard to (programLocation)
